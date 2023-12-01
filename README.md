@@ -87,5 +87,5 @@ ansible-playbook -i inventory.ini k8s-setup.yml
 
 For docker+k8s
 ```
-ansible-playbook -i inventory.ini 
+ansible-playbook -i inventory.ini docker-plus-k8.yml
 ```
