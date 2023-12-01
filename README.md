@@ -1,3 +1,4 @@
+# installation steps 
 here we have 3 server nodes. one is master and other 2 are worker nodes
 These commands should be run in the master node
 ```
@@ -72,8 +73,16 @@ bash
 ```
 ansible-playbook -i inventory.ini docker-setup.yml
 ```
-## in order to run the playbook file
+# Running the playbook file
+for docker installation
 ```
   ansible-playbook -i inventory.ini docker-setup.yml
 
 ```
+For K8's multi node setup installation
+```
+ansible-playbook -i inventory.ini k8s-setup.yml
+
+```
+
+For
