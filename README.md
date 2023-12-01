@@ -37,42 +37,42 @@ a. Generate SSH Key Pair
 On your Ansible control machine, generate an SSH key pair:
 
 bash
-
+```
 ssh-keygen -t rsa
-
+```
 b. Copy Public Key to Target Hosts
 
 Copy the public key to each target host:
 
 bash
-
+```
 ssh-copy-id idrbt@192.168.138.111
 ssh-copy-id idrbt@192.168.138.222
 ssh-copy-id idrbt@192.168.138.223
-
+```
 c. Update inventory.ini to Use SSH Key
 
 Modify your inventory.ini to use SSH key instead of password:
 
 ini
-
+```
 [master]
 192.168.138.111 ansible_user=idrbt ansible_ssh_private_key_file=/path/to/id_rsa
 
 [workers]
 192.168.138.222 ansible_user=idrbt ansible_ssh_private_key_file=/path/to/id_rsa
 192.168.138.223 ansible_user=idrbt ansible_ssh_private_key_file=/path/to/id_rsa
-
+```
 Replace /path/to/id_rsa with the actual path to your private SSH key.
 Retry Ansible Playbook
 
 After making the changes, retry running the Ansible playbook:
 
 bash
-
+```
 ansible-playbook -i inventory.ini docker-setup.yml
-
-inorder to run the playbook file
+```
+## in order to run the playbook file
 ```
   ansible-playbook -i inventory.ini docker-setup.yml
 
